@@ -8,7 +8,7 @@ require("dotenv").config();
 // Run Test
 app.get("/", (req, res) => {
   res.send(
-    `<h1  style="text-align: center; margin-top:100px;  font-weight: 900; color: blue">Welcome To Linux Pc Builder Backend Server</h1>`
+    `<h1  style="text-align: center; margin-top:100px;  font-weight: 900; color: blue">Welcome To Linux Pc Builder Server</h1>`
   );
 });
 
