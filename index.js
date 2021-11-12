@@ -44,6 +44,7 @@ client.connect((err) => {
     res.send({ count, desktopPackage });
   });
 
+  // Get Desktop Collection Specific 1 With Package Collection Id
   app.get("/desktopDetails/:id", async (req, res) => {
     const params = req.params.id;
     const query = { _id: ObjectId(params) };
