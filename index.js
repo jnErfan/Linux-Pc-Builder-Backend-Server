@@ -44,7 +44,7 @@ client.connect((err) => {
     res.send({ count, desktopPackage });
   });
 
-  // Get Desktop Collection Specific 1 With Package Collection Id
+  // Get Desktop Collection Specific 1 Collection With Package Collection Id
   app.get("/desktopDetails/:id", async (req, res) => {
     const params = req.params.id;
     const query = { _id: ObjectId(params) };
@@ -66,6 +66,29 @@ client.connect((err) => {
     const options = { upsert: true };
     const updateDoc = { $set: user };
     const result = await usersCollection.updateOne(query, updateDoc, options);
+    res.json(result);
+    console.log(result);
+  });
+
+  //Make Admin
+  app.put("/makeAdmin", async (req, res) => {
+    const adminEmail = req.body.data.email;
+    const query = { email: adminEmail };
+    let updateDoc;
+    if (req.body.checked === true) {
+      updateDoc = { $set: { position: "Customer" } };
+    } else {
+      updateDoc = { $set: { position: "Admin" } };
+    }
+    const result = await usersCollection.updateOne(query, updateDoc);
+    res.json(result);
+    console.log(result);
+  });
+
+  // Desktop Insert
+  app.post("/addDesktop", async (req, res) => {
+    const desktopInfo = req.body;
+    const result = await desktopCollections.insertOne(desktopInfo);
     res.json(result);
     console.log(result);
   });
