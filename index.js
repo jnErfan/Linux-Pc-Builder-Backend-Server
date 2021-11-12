@@ -26,6 +26,7 @@ client.connect((err) => {
   const desktopCollections = database.collection("desktops");
   const usersCollection = database.collection("users");
   const ordersCollection = database.collection("orders");
+  const reviewCollection = database.collection("review");
 
   // Get All Desktop Collection With Pagination
   app.get("/desktopsPagination", async (req, res) => {
@@ -86,6 +87,14 @@ client.connect((err) => {
     console.log(result);
   });
 
+  app.delete("/deleteDesktop/:Id", async (req, res) => {
+    const id = req.params.Id;
+    const query = { _id: ObjectId(id) };
+    const result = await desktopCollections.deleteOne(query);
+    res.send(result);
+    console.log(result);
+  });
+
   // Desktop Insert
   app.post("/addDesktop", async (req, res) => {
     const desktopInfo = req.body;
@@ -111,12 +120,42 @@ client.connect((err) => {
   // Manage All Orders Status
   app.put("/statusUpdate/:id", async (req, res) => {
     const id = req.params.id;
-    const updateStatus = req.body.status;
+    const updateStatus = req.body;
+    console.log(updateStatus);
     const query = { _id: ObjectId(id) };
-    const updateDoc = { $set: { status: updateStatus } };
+    let updateDoc;
+    if (updateStatus.reason) {
+      updateDoc = {
+        $set: { status: updateStatus.status, reason: updateStatus.reason },
+      };
+    } else {
+      updateDoc = { $set: { status: updateStatus.status } };
+    }
     const result = await ordersCollection.updateOne(query, updateDoc);
     res.json(result);
     console.log(result);
+  });
+
+  // Find Customer Ordered
+  app.get("/myOrder/:email", async (req, res) => {
+    const emailMatch = req.params.email;
+    const query = { email: emailMatch };
+    const result = await ordersCollection.find(query).toArray();
+    res.send(result);
+  });
+
+  // Customer Review
+  app.post("/review", async (req, res) => {
+    const reviewInfo = req.body;
+    const result = await reviewCollection.insertOne(reviewInfo);
+    res.json(result);
+    console.log(result);
+  });
+
+  // Get All Review
+  app.get("/review", async (req, res) => {
+    const result = await reviewCollection.find({}).toArray();
+    res.send(result);
   });
 
   // client.close();
