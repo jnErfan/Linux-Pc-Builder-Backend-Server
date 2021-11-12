@@ -58,7 +58,7 @@ client.connect((err) => {
     res.json(result);
   });
 
-  // Google Facebook Github Info
+  // Google Facebook Github Information
   app.put("/users", async (req, res) => {
     const user = req.body;
     const query = { email: user.email };
