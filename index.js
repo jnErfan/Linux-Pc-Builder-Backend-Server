@@ -27,6 +27,7 @@ client.connect((err) => {
   const usersCollection = database.collection("users");
   const ordersCollection = database.collection("orders");
   const reviewCollection = database.collection("review");
+  const customerCartCollection = database.collection("cart");
 
   // Get All Desktop Collection With Pagination
   app.get("/desktopsPagination", async (req, res) => {
@@ -100,7 +101,6 @@ client.connect((err) => {
   app.put("/updateDesktop/:id", async (req, res) => {
     const updateProductId = req.params.id;
     const updateProduct = req.body;
-    console.log(updateProduct);
     const collectionId = { _id: ObjectId(updateProductId) };
     const updateDoc = { $set: updateProduct };
     const result = await desktopCollections.updateOne(collectionId, updateDoc);
@@ -122,7 +122,14 @@ client.connect((err) => {
     res.json(result);
     console.log(result);
   });
-
+  // Delete Order  One
+  app.delete("/deleteOrder/:Id", async (req, res) => {
+    const id = req.params.Id;
+    const query = { _id: ObjectId(id) };
+    const result = await ordersCollection.deleteOne(query);
+    res.send(result);
+    console.log(result);
+  });
   // Manage All Orders
   app.get("/manageOrders", async (req, res) => {
     const result = await ordersCollection.find({}).toArray();
@@ -156,12 +163,24 @@ client.connect((err) => {
     res.send(result);
   });
 
+  // Add To Cart Order
+  app.post("/addToCartOrder", async (req, res) => {
+    const desktopInfo = req.body;
+    const result = await customerCartCollection.insertOne(desktopInfo);
+    res.json(result);
+  });
+
+  // Get Cart Order
+  app.get("/addToCartOrder", async (req, res) => {
+    const result = await customerCartCollection.find({}).toArray();
+    res.send(result);
+  });
+
   // Customer Review
   app.post("/review", async (req, res) => {
     const reviewInfo = req.body;
     const result = await reviewCollection.insertOne(reviewInfo);
     res.json(result);
-    console.log(result);
   });
 
   // Get All Review
