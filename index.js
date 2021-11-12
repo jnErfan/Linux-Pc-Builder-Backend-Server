@@ -51,7 +51,7 @@ client.connect((err) => {
     res.send(result);
   });
 
-  // Create Email Password Info
+  // Create Email Password Information
   app.post("/users", async (req, res) => {
     const user = req.body;
     const result = await usersCollection.insertOne(user);
