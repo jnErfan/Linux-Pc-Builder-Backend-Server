@@ -25,6 +25,7 @@ client.connect((err) => {
   const database = client.db("linux_pc_builder");
   const desktopCollections = database.collection("desktops");
   const usersCollection = database.collection("users");
+  const ordersCollection = database.collection("orders");
 
   // Get All Desktop Collection With Pagination
   app.get("/desktopsPagination", async (req, res) => {
@@ -89,6 +90,14 @@ client.connect((err) => {
   app.post("/addDesktop", async (req, res) => {
     const desktopInfo = req.body;
     const result = await desktopCollections.insertOne(desktopInfo);
+    res.json(result);
+    console.log(result);
+  });
+
+  // User Order Details
+  app.post("/orderDetails", async (req, res) => {
+    const orderInfo = req.body;
+    const result = await ordersCollection.insertOne(orderInfo);
     res.json(result);
     console.log(result);
   });
