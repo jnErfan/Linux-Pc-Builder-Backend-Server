@@ -108,6 +108,17 @@ client.connect((err) => {
     res.json(result);
   });
 
+  // Manage All Orders Status
+  app.put("/statusUpdate/:id", async (req, res) => {
+    const id = req.params.id;
+    const updateStatus = req.body.status;
+    const query = { _id: ObjectId(id) };
+    const updateDoc = { $set: { status: updateStatus } };
+    const result = await ordersCollection.updateOne(query, updateDoc);
+    res.json(result);
+    console.log(result);
+  });
+
   // client.close();
 });
 
