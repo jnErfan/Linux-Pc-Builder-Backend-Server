@@ -102,6 +102,12 @@ client.connect((err) => {
     console.log(result);
   });
 
+  // Manage All Orders
+  app.get("/manageOrders", async (req, res) => {
+    const result = await ordersCollection.find({}).toArray();
+    res.json(result);
+  });
+
   // client.close();
 });
 
