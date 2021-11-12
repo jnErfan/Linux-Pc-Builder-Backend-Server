@@ -1,0 +1,200 @@
+[
+  {
+    "image": "https://i.ibb.co/2NctKVY/1.png",
+    "pcName": "Intel 10th Gen Core i3-10100 Gaming",
+    "configuration": "ASRock H470M-HDV 10th and 11th Gen Intel M-ATX,Motherboard,Intel i3-10100 10th Gen Processor,4GB 2400MHz RAM +1TB HDD, Asus GeForce GT 710 2GB DDR5 Graphics Card",
+    "Brand": "Intel",
+    "price": "36100",
+    "sell": "147",
+    "rated": "122",
+    "stock": "Available",
+    "rate": "3.6"
+  },
+  {
+    "image": "https://i.ibb.co/XxnXS2X/2.png",
+    "pcName": "Gaming 10th Gen Core i5-10400f",
+    "configuration": "ASRock B560M-HDV 11th Gen M-ATX Motherboard,Intel,10th Gen i5-10400F Processor,8GB RAM +1TB HDD + 128GB SSD,GT 1030 2GB GDDR5 Graphics Card",
+    "Brand": "Intel",
+    "price": "53400",
+    "sell": "127",
+    "rated": "108",
+    "stock": "Available",
+    "rate": "4.1"
+  },
+  {
+    "image": "https://i.ibb.co/nCq7SfK/3.jpg",
+    "pcName": "AMD Ryzen 5 3500X Gaming",
+    "configuration": "ASROCK B450M-HDV R4.0 AMD B450 Chipset Motherboard,AMD RYZEN 5 3500X Processor,8GB 2400MHz RAM + 128GB SSD,GeForce GTX 1050Ti 4GB Graphics",
+    "Brand": "RYZEN",
+    "price": "63500",
+    "sell": "197",
+    "rated": "155",
+    "stock": "StockOut",
+    "rate": "4.3"
+  },
+  {
+    "image": "https://i.ibb.co/z8Tff73/4.jpg",
+    "pcName": "AMD Ryzen 5 3600 Gaming",
+    "configuration": "Asrock B450M Pro4-F AMD Motherboard,AMD Ryzen 5 3600 Processor,8GB 3200MHz RAM + 128GB SSD, GeForce GTX 1050Ti 4GB Graphics Card",
+    "Brand": "RYZEN",
+    "price": "69230",
+    "sell": "177",
+    "rated": "144",
+    "stock": "Available",
+    "rate": "4.1"
+  },
+  {
+    "image": "https://i.ibb.co/dWPBZC2/5.jpg",
+    "pcName": "Intel Core i5-11400 11th Gen Gaming",
+    "configuration": "Intel 11th Gen Core i5-11400 Rocket Lake Processor,ASRock B560M Pro4 11th Gen M-ATX Motherboard,8GB 3600MHz RAM + 1TB,HDD + 256GB M.2Ie SSD,GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics",
+    "Brand": "Intel",
+    "price": "105600",
+    "sell": "147",
+    "rated": "77",
+    "stock": "Available",
+    "rate": "3.7"
+  },
+  {
+    "image": "https://i.ibb.co/JWZMTs9/6.jpg",
+    "pcName": "AMD Ryzen 7 3700X Gaming",
+    "configuration": "Asrock B450M Pro4-F AMD Motherboard, AMD Ryzen 7 ,3700X Processor, 8GB 3200MHz RAM + 256GB SSD, GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics",
+    "Brand": "RYZEN",
+    "price": "110500",
+    "sell": "107",
+    "rated": "98",
+    "stock": "Available",
+    "rate": "3.9"
+  },
+  {
+    "image": "https://i.ibb.co/j64Myhg/7.jpg",
+    "pcName": "AMD Ryzen 5 5600X Gaming",
+    "configuration": "ASRock B550 Pro4 DDR4 AMD Motherboard, AMD Ryzen 5 5600X Processor,8GB 3200MHz RAM + 256GB SSD,GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics",
+    "Brand": "RYZEN",
+    "price": "137400",
+    "sell": "47",
+    "rated": "33",
+    "stock": "Available",
+    "rate": "4.0"
+  },
+  {
+    "image": "https://i.ibb.co/1KRnq6q/8.jpg",
+    "pcName": "AMD Ryzen 7 3800X GTX 1660 SUPER 6GB Graphics Gaming",
+    "configuration": "ASRock B550M Steel Legend DDR4 AMD Motherboard,EVGA GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics Card,AMD Ryzen 7 3800X Processor, Team 8GB RAM + Team 256GB SSD",
+    "Brand": "RYZEN",
+    "price": "137400",
+    "sell": "117",
+    "rated": "78",
+    "stock": "StockOut",
+    "rate": "3.5"
+  },
+  {
+    "image": "https://i.ibb.co/hWM0kFx/9.jpg",
+    "pcName": "Intel i7-11700k 11th Gen Gaming",
+    "configuration": "Intel 11th Gen Core i7-11700k Rocket Lake Processor, ASROCK Z590 STEEL LEGEND Motherboard,TEAM 8GB RAM + TEAM 256GB SSD,GeForce RTX 3070 Ti Trinity 8GB Graphics Card",
+    "Brand": "Intel",
+    "price": "216200",
+    "sell": "39",
+    "rated": "22",
+    "stock": "Available",
+    "rate": "3.9"
+  },
+  {
+    "image": "https://i.ibb.co/phXz9XP/10.jpg",
+    "pcName": "AMD Ryzen 9 3900X Gaming",
+    "configuration": "Asrock X570 Steel Legend AMD Motherboard,AMD Ryzen 9 3900X Processor, 8GB 3600MHz RAM + 1TB HDD + 250GB SSD, RTX 3070 Ti Trinity 8GB Graphics Card",
+    "Brand": "RYZEN",
+    "price": "218200",
+    "sell": "12",
+    "rated": "9",
+    "stock": "Available",
+    "rate": "3.3"
+  },
+  {
+    "image": "https://i.ibb.co/YWry4wy/11.jpg",
+    "pcName": "AMD Ryzen 7 5800X Gaming",
+    "configuration": "Asrock X570 Steel Legend AMD Motherboard, AMD Ryzen 7 5800X Processor,16GB 3200MHz RAM + 256GB SSD, GeForce RTX 3070 Ti Trinity 8GB Graphics Card",
+    "Brand": "RYZEN",
+    "price": "218900",
+    "sell": "21",
+    "rated": "19",
+    "stock": "StockOut",
+    "rate": "4.1"
+  },
+  {
+    "image": "https://i.ibb.co/pdwk50d/12.jpg",
+    "pcName": "AMD Ryzen 9 5900X Gaming",
+    "configuration": "ASRock X570 STEEL LEGEND AMD Motherboard, AMD Ryzen 9 5900X Processor, 8GB RAM + 1TB HDD + 256GB SSD,RTX 3070 Ti Trinity 8GB Graphics Card",
+    "Brand": "RYZEN",
+    "price": "238000",
+    "sell": "7",
+    "rated": "4",
+    "stock": "Available",
+    "rate": "4.3"
+  },
+  {
+    "image": "https://i.ibb.co/2nCTSJ6/13.jpg",
+    "pcName": "AMD Ryzen 9 5950X Gaming",
+    "configuration": "ASRock X570 STEEL LEGEND AMD Motherboard,AMD Ryzen 9 5950X Processor, 8GB RAM + 1TB HDD + 256GB SSD,RTX 3070 Ti Trinity 8GB Graphics Card",
+    "Brand": "RYZEN",
+    "price": "259200",
+    "sell": "8",
+    "rated": "5",
+    "stock": "StockOut",
+    "rate": "3.3"
+  },
+  {
+    "image": "https://i.ibb.co/HGNMK4Y/14.jpg",
+    "pcName": "Intel 10th Gen Core i5-10600 Gaming",
+    "configuration": "ASRock B460M Pro4 10th Gen DDR4 Motherboard,Intel 10th Gen Core i5-10600 Processor,1TB HDD+ 8GB 3200Mhz RAM+ 120GB SSD,  RX 5600XT Gaming OC 6GB Graphics card",
+    "Brand": "Intel",
+    "price": "82540",
+    "sell": "184",
+    "rated": "148",
+    "stock": "Available",
+    "rate": "4.3"
+  },
+  {
+    "image": "https://i.ibb.co/xf0gHLK/15.jpg",
+    "pcName": "AMD Ryzen 5 3600X Gaming",
+    "configuration": "Asrock B450M Pro4-F Motherboard, AMD Ryzen 5 3600X Processor,8GB DDR4 Ram + 256GB SSD,GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics",
+    "Brand": "RYZEN",
+    "price": "96500",
+    "sell": "144",
+    "rated": "116",
+    "stock": "Available",
+    "rate": "4.1"
+  },
+  {
+    "image": "https://i.ibb.co/N66g6N2/16.jpg",
+    "pcName": "Gaming Core i5 7th 7640x",
+    "configuration": "ASRock Fatal1ty X299 Gaming K6 Intel ATX Motherboard,Intel Core i5-7640X X-series Kaby Lake Processor, 8GB RAM+240GB SSD +1TB HDD, RTX 3060 Ti NB-V 8GB Graphics Card",
+    "Brand": "Intel",
+    "price": "125200",
+    "sell": "107",
+    "rated": "85",
+    "stock": "StockOut",
+    "rate": "4.0"
+  },
+  {
+    "image": "https://i.ibb.co/6vg40YG/17.jpg",
+    "pcName": "Intel 10th Gen Core i9-10900k Gaming",
+    "configuration": "ASRock Z490 Extreme4 10th Gen DDR4 Motherboard, Intel Core i9-10900K 10th Gen Processor,1TB HDD+ 250GB SSD+ 16GB RAM, RTX 3090 GAMING OC 24G Graphics Card",
+    "Brand": "Intel",
+    "price": "286540",
+    "sell": "12",
+    "rated": "9",
+    "stock": "StockOut",
+    "rate": "3.0"
+  },
+  {
+    "image": "https://i.ibb.co/BT9dZW7/18.jpg",
+    "pcName": "Intel 10th Gen Core i7-10700 Gaming",
+    "configuration": "ASRock B560 Pro4 10th and 11th Gen ATX Motherboard Intel 10th Gen Core i7-10700 Processor 1TB HDD+ 8GB DDR4 RAM + 256GB SSD, GTX 1660 SUPER SC ULTRA GAMING 6GB Graphics",
+    "Brand": "Intel",
+    "price": "112500",
+    "sell": "87",
+    "rated": "68",
+    "stock": "Available",
+    "rate": "3.9"
+  }
+]

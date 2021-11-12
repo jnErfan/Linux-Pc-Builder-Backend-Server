@@ -87,12 +87,24 @@ client.connect((err) => {
     console.log(result);
   });
 
+  // Delete Manage Desktop  One
   app.delete("/deleteDesktop/:Id", async (req, res) => {
     const id = req.params.Id;
     const query = { _id: ObjectId(id) };
     const result = await desktopCollections.deleteOne(query);
     res.send(result);
     console.log(result);
+  });
+
+  // Update All Desktop
+  app.put("/updateDesktop/:id", async (req, res) => {
+    const updateProductId = req.params.id;
+    const updateProduct = req.body;
+    console.log(updateProduct);
+    const collectionId = { _id: ObjectId(updateProductId) };
+    const updateDoc = { $set: updateProduct };
+    const result = await desktopCollections.updateOne(collectionId, updateDoc);
+    res.json(result);
   });
 
   // Desktop Insert
