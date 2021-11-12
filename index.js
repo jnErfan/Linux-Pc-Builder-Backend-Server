@@ -26,7 +26,7 @@ client.connect((err) => {
   const desktopCollections = database.collection("desktops");
   const usersCollection = database.collection("users");
 
-  // Get All Desktop Collection
+  // Get All Desktop Collection With Pagination
   app.get("/desktopsPagination", async (req, res) => {
     const desktopShowUi = await desktopCollections.find({});
     const page = req.query.page;
