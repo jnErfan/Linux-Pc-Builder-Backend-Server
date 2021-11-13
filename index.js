@@ -5,9 +5,16 @@ const port = process.env.PORT || 5000;
 const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 require("dotenv").config();
+const admin = require("firebase-admin");
 
 app.use(cors());
 app.use(express.json());
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
+/// Jwt Initialize
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 // Run Test
 app.get("/", (req, res) => {
@@ -15,13 +22,28 @@ app.get("/", (req, res) => {
     `<h1  style="text-align: center; margin-top:100px;  font-weight: 900; color: blue">Welcome To Linux Pc Builder Server</h1>`
   );
 });
+
 // https://linux-pc-builder-server.herokuapp.com/
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qyw7u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+// JWT Verification
+async function verifyToken(req, res, next) {
+  if (req.headers?.authorization?.startsWith("Bearer ")) {
+    const idToken = req.headers.authorization.split("Bearer ")[1];
+    try {
+      const decodedUser = await admin.auth().verifyIdToken(idToken);
+      req.verifyEmail = decodedUser.email;
+    } catch {}
+  }
+  next();
+}
+
 client.connect((err) => {
+  // Database
   const database = client.db("linux_pc_builder");
   const desktopCollections = database.collection("desktops");
   const usersCollection = database.collection("users");
@@ -73,12 +95,21 @@ client.connect((err) => {
   });
 
   // Get All Users
-  app.get("/users/:email", async (req, res) => {
-    const params = req.params.email;
-    const query = { email: params };
-    const result = await usersCollection.find(query).toArray();
-    res.send(result);
-  });
+  app.get(
+    "/users/:email",
+    /* verifyToken, */ async (req, res) => {
+      /*  console.log("JWT", req.verifyEmail);
+    console.log(req.params.email);
+    if (req?.verifyEmail === req?.params?.email) { */
+      const params = req.params.email;
+      const query = { email: params };
+      const result = await usersCollection.find(query).toArray();
+      res.send(result);
+      /*  } else {
+      res.status(401).send([{ message: "Unauthorize Email Address" }]);
+    } */
+    }
+  );
 
   //Make Admin
   app.put("/makeAdmin", async (req, res) => {
