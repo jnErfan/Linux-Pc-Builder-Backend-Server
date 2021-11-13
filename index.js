@@ -70,7 +70,14 @@ client.connect((err) => {
     const updateDoc = { $set: user };
     const result = await usersCollection.updateOne(query, updateDoc, options);
     res.json(result);
-    console.log(result);
+  });
+
+  // Get All Users
+  app.get("/users/:email", async (req, res) => {
+    const params = req.params.email;
+    const query = { email: params };
+    const result = await usersCollection.find(query).toArray();
+    res.send(result);
   });
 
   //Make Admin
@@ -85,7 +92,6 @@ client.connect((err) => {
     }
     const result = await usersCollection.updateOne(query, updateDoc);
     res.json(result);
-    console.log(result);
   });
 
   // Delete Manage Desktop  One
@@ -94,7 +100,6 @@ client.connect((err) => {
     const query = { _id: ObjectId(id) };
     const result = await desktopCollections.deleteOne(query);
     res.send(result);
-    console.log(result);
   });
 
   // Update All Desktop
@@ -112,7 +117,6 @@ client.connect((err) => {
     const desktopInfo = req.body;
     const result = await desktopCollections.insertOne(desktopInfo);
     res.json(result);
-    console.log(result);
   });
 
   // User Order Details
@@ -120,7 +124,6 @@ client.connect((err) => {
     const orderInfo = req.body;
     const result = await ordersCollection.insertOne(orderInfo);
     res.json(result);
-    console.log(result);
   });
   // Delete Order  One
   app.delete("/deleteOrder/:Id", async (req, res) => {
@@ -128,7 +131,6 @@ client.connect((err) => {
     const query = { _id: ObjectId(id) };
     const result = await ordersCollection.deleteOne(query);
     res.send(result);
-    console.log(result);
   });
   // Manage All Orders
   app.get("/manageOrders", async (req, res) => {
@@ -172,7 +174,17 @@ client.connect((err) => {
 
   // Get Cart Order
   app.get("/addToCartOrder", async (req, res) => {
-    const result = await customerCartCollection.find({}).toArray();
+    const emailMatched = req.query.email;
+    const query = { email: emailMatched };
+    const result = await customerCartCollection.find(query).toArray();
+    res.send(result);
+  });
+
+  // Delete Cart Order
+  app.delete("/deleteCartOrder/:id", async (req, res) => {
+    const deleteId = req.params.id;
+    const query = { _id: deleteId };
+    const result = await customerCartCollection.deleteOne(query);
     res.send(result);
   });
 
