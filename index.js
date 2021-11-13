@@ -5,16 +5,9 @@ const port = process.env.PORT || 5000;
 const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 require("dotenv").config();
-const admin = require("firebase-admin");
 
 app.use(cors());
 app.use(express.json());
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-
-/// Jwt Initialize
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
 
 // Run Test
 app.get("/", (req, res) => {
@@ -28,18 +21,6 @@ const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-// JWT Verification
-async function verifyToken(req, res, next) {
-  if (req.headers?.authorization?.startsWith("Bearer ")) {
-    const idToken = req.headers.authorization.split("Bearer ")[1];
-    try {
-      const decodedUser = await admin.auth().verifyIdToken(idToken);
-      req.verifyEmail = decodedUser.email;
-    } catch {}
-  }
-  next();
-}
 
 client.connect((err) => {
   // Database
