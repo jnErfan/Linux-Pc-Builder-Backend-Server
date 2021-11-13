@@ -187,6 +187,15 @@ client.connect((err) => {
     const result = await customerCartCollection.deleteOne(query);
     res.send(result);
   });
+  // Delete Cart All Order
+  app.delete("/addToCartOrder", async (req, res) => {
+    const deleteId = req.body;
+    console.log(deleteId);
+    const query = { deleteId };
+    const result = await customerCartCollection.deleteMany(query);
+    res.send(result);
+    console.log(result);
+  });
 
   // Customer Review
   app.post("/review", async (req, res) => {
